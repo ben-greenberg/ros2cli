@@ -33,11 +33,11 @@ class SendGoalVerb(VerbExtension):
     def add_arguments(self, parser, cli_name):
         arg = parser.add_argument(
             'action_name',
-            help="Name of the ROS action (e.g. '/fibonacci')")
+            help="Name of the ROS action (e.g. /fibonacci)")
         arg.completer = action_name_completer
         arg = parser.add_argument(
             'action_type',
-            help="Type of the ROS action (e.g. 'example_interfaces/Fibonacci')")
+            help="Type of the ROS action (e.g. example_interfaces/Fibonacci)")
         arg.completer = ActionTypeCompleter(action_name_key='action_name')
         parser.add_argument(
             'goal',
